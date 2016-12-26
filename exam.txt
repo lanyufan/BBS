@@ -1,16 +1,16 @@
-create database exam;	--创建库
+﻿create database exam;	--创建库
 
 use exam;	--进库
 
-create table Board(		--创建Board表
+create table Board(
 
-	Board_ID int,		--ID
+	Board_ID int,
 	
-	Board_name char(20),	--名称
+	Board_name char(20),
 	
-	Board_date datetime,	--创建日期
+	Board_date datetime,
 	
-	Board_describe char(64)		--描述
+	Board_describe char(64)
 	
 	);
 	
@@ -18,15 +18,15 @@ create table Board(		--创建Board表
 	
 	insert Board values(12,'Board2',2016.12.24,'描述2');
 	
-create table Forum(		--创建Forum表
+create table Forum(
 
-	Forum_FID int,		--FID
+	Forum_FID int,
 	
-	Forum_name char(20),	--名称
+	Forum_name char(20),
 	
-	Forum_describe char(64),	--描述
+	Forum_describe char(64),
 	
-	Board_ID int		--Forum表所属Board表的ID
+	Board_ID int
 	
 	);
 	
@@ -34,63 +34,63 @@ create table Forum(		--创建Forum表
 	
 	insert Board values(14,'Forum2','描述1'，12);
 	
-create table moderator(		--创建版主表
+create table moderator(
 
-	Forum_FID int,		--FID版主
+	Forum_FID int,
 	
-	User_UID int,		--UID版主
+	User_UID int,
 	
-	operUID int,	--版主操作
+	operUID int,
 	
-	operDate date		--版主操作时间
+	operDate date
 	
 	);
 
-create table Article(		--创建Article表
+create table Article(
 
-	Article_AID int,		--AID
+	Article_AID int,
 	
-	Article_theme char(32),		--主题
+	Article_theme char(32),
 	
-	Article_posttime datetime,		--发帖时间
+	Article_posttime datetime,
 	
-	Forum_FID int,		--Article表所属Forum表的ID
+	Forum_FID int,
 	
-	Article_views int,		--浏览次数
+	Article_views int,
 	
-	Article_content char(256),	--内容
+	Article_content char(255),
 	
-	Article_UID int,		--用户UID
+	Article_UID int,
 	
-	LastReplyDate datetime,		--最后发送的时间
+	LastReplyDate datetime,
 	
-	LastReplyUID int		--最后发送的用户
+	LastReplyUID int
 	
 	);
 	
-create table Reply(		--创建Reply表
+create table Reply(
 
-	reply_time datetime,	--回帖时间
+	reply_time datetime,
 	
-	reply_content char(256),	--回帖内容
+	reply_content char(255),
 	
-	reply_title char(128),		--标题
+	reply_title char(128),
 	
-	reply_UID int,		--UID
+	reply_UID int,
 	
-	replydate datetime,		--回帖时间
+	replydate datetime,
 	
-	Article_AID int			--Reply表所属Article表的ID
+	Article_AID int
 	
 	);
 	
-create table User(		--创建用户表
+create table User(
 
-	User_UID int,		--用户ID
+	User_UID int,
 	
-	UserName char(20),		--用户名
+	UserName char(20),
 	
-	Password bigint		--用户密码
+	Password bigint
 	
 	);
 	
@@ -98,13 +98,13 @@ create table UserDesc(
 
 	User_UID int,
 	
-	UserDesc_Desci
+	UserDesc_Desci varchar(20),
 	
-	UserDesc_Name
+	UserDesc_Name varchar(20),
 	
-	UserDesc_Sex
+	UserDesc_Sex int,
 	
-	UserDesc_Birthday
+	UserDesc_Birthday varchar(64)
 	
 	);
 	
@@ -134,6 +134,6 @@ create table Entity9(
 	
 create table RID(
 
-	RightName char(20)		--正确的姓名
+	RightName char(20)
 	
 	);
