@@ -1,0 +1,139 @@
+create database exam;	--创建库
+
+use exam;	--进库
+
+create table Board(		--创建Board表
+
+	Board_ID int,		--ID
+	
+	Board_name char(20),	--名称
+	
+	Board_date datetime,	--创建日期
+	
+	Board_describe char(64)		--描述
+	
+	);
+	
+	insert Board values(11,'Board1',2016.12.24,'描述1');
+	
+	insert Board values(12,'Board2',2016.12.24,'描述2');
+	
+create table Forum(		--创建Forum表
+
+	Forum_FID int,		--FID
+	
+	Forum_name char(20),	--名称
+	
+	Forum_describe char(64),	--描述
+	
+	Board_ID int		--Forum表所属Board表的ID
+	
+	);
+	
+	insert Board values(13,'Forum1','描述1'，11);
+	
+	insert Board values(14,'Forum2','描述1'，12);
+	
+create table moderator(		--创建版主表
+
+	Forum_FID int,		--FID版主
+	
+	User_UID int,		--UID版主
+	
+	operUID int,	--版主操作
+	
+	operDate date		--版主操作时间
+	
+	);
+
+create table Article(		--创建Article表
+
+	Article_AID int,		--AID
+	
+	Article_theme char(32),		--主题
+	
+	Article_posttime datetime,		--发帖时间
+	
+	Forum_FID int,		--Article表所属Forum表的ID
+	
+	Article_views int,		--浏览次数
+	
+	Article_content char(256),	--内容
+	
+	Article_UID int,		--用户UID
+	
+	LastReplyDate datetime,		--最后发送的时间
+	
+	LastReplyUID int		--最后发送的用户
+	
+	);
+	
+create table Reply(		--创建Reply表
+
+	reply_time datetime,	--回帖时间
+	
+	reply_content char(256),	--回帖内容
+	
+	reply_title char(128),		--标题
+	
+	reply_UID int,		--UID
+	
+	replydate datetime,		--回帖时间
+	
+	Article_AID int			--Reply表所属Article表的ID
+	
+	);
+	
+create table User(		--创建用户表
+
+	User_UID int,		--用户ID
+	
+	UserName char(20),		--用户名
+	
+	Password bigint		--用户密码
+	
+	);
+	
+create table UserDesc(		
+
+	User_UID int,
+	
+	UserDesc_Desci
+	
+	UserDesc_Name
+	
+	UserDesc_Sex
+	
+	UserDesc_Birthday
+	
+	);
+	
+create table Entity7(
+
+	User_UID int,
+	
+	RoleID int
+	
+	);
+	
+create table role(
+
+	RoleID int,
+	
+	RoleName char(20)
+	
+	);
+	
+create table Entity9(
+
+	Entity9_RID int,
+	
+	RoleID int
+	
+	);
+	
+create table RID(
+
+	RightName char(20)		--正确的姓名
+	
+	);
